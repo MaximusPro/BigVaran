@@ -131,7 +131,7 @@ int SellOrder(int TakeProfit, int StopLoss, double VVolume, int MAGICNumber, str
 int GoodDep = 0;
 int ControlDepRisk(int DepositRisk)
   {
-   //Print("ControlDepRisk: ", DepositRisk);
+//Print("ControlDepRisk: ", DepositRisk);
    if(GoodDep!=0)
      {
       int CurrentDep = (int)(NormalizeDouble(AccountBalance(), 0));
@@ -157,6 +157,9 @@ int ControlDepRisk(int DepositRisk)
 //|Dynamically calculates the lot for the specified risk per deposit.                                                                  |
 //+------------------------------------------------------------------+
 
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 double DynamicLot(int DepositRisk, double StartLot, bool DynamicLots)
   {
    if(DynamicLots == true && GoodDep != 0)
@@ -170,14 +173,14 @@ double DynamicLot(int DepositRisk, double StartLot, bool DynamicLots)
          return (StartLot+AddedLot);
         }
      }
-     else 
+   else
      {
       GoodDep = (int)NormalizeDouble(AccountBalance(), 0);
      }
    return StartLot;
   }
-  
-  //+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
 //|Function to control whether the order is closed or not.                                                                  |
 //+------------------------------------------------------------------+
 bool IsOrderClose(int ticket)
@@ -192,3 +195,20 @@ bool IsOrderClose(int ticket)
      }
    return true;
   }
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double MaxLots(string CopySymbol)
+  {
+   double LotSize = MarketInfo(CopySymbol, MODE_LOTSIZE);
+   if(LotSize!=0)
+     {
+      int Leverage = AccountLeverage();
+      double OneLot = NormalizeDouble(LotSize/Leverage, Digits);
+      double MaxLot = AccountBalance()/OneLot;
+      return MaxLot;
+     }
+   return 0;
+  }
+//+------------------------------------------------------------------+
