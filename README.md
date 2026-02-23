@@ -76,20 +76,7 @@ These are example default values — always optimize and test your own parameter
 
 - **Backtest first** — run in Strategy Tester with modeling quality ≥ 99%
 - Test on a **demo account** for at least 1–3 months before going live
-- Avoid trading during very low liquidity hours and major news releases (unless filters are strengthened)
-- Not recommended for timeframes below **M30** without major strategy adaptation
 - Regularly monitor actual spread, slippage and broker execution quality
-
-## Strategy Tester Results (example / placeholder)
-
-Replace with your real backtest or forward test results.
-
-| Period       | Symbol   | Timeframe | Net Profit | Max Drawdown | Profit Factor | Trades |
-|--------------|----------|-----------|------------|--------------|---------------|--------|
-| 2020–2025    | EURUSD   | H1        | +142%      | 11.8%        | 1.87          | 378    |
-| 2022–2025    | XAUUSD   | H4        | +295%      | 19.4%        | 2.12          | 164    |
-
-*(Insert real screenshots from MT4 Strategy Tester here if possible)*
 
 ## License
 
