@@ -27,8 +27,8 @@ The strategy aims to capture strong directional moves while avoiding ranging / c
 ## Requirements
 
 - MetaTrader 4 terminal (build 600+ recommended)
-- Recommended timeframes: **H1** – **H4**
-- Instruments: trending pairs / assets (Forex majors, Gold, indices, liquid cryptocurrencies)
+- Recommended timeframes: M5
+- Instruments: trending pairs GBPAUD
 - Broker with low spread and fast execution (ECN / STP preferred)
 
 ## Installation
